@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
+    SpriteRenderer npcSpriteRenderer;
+
+  
     // Start is called before the first frame update
     void Start()
     {
-        
+        npcSpriteRenderer = GetComponent<SpriteRenderer>();
+        npcSpriteRenderer.color = Color.red;
     }
 
     // Update is called once per frame
