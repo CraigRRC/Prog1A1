@@ -14,26 +14,12 @@ public class WanderBehaviour : MonoBehaviour
     void Start()
     {
         npcStartingPosition = transform.position;
+        npcNewPosition = new Vector2(1f, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-
-        if (!npcIsMoving)
-        {
-            npcNewPosition = (Random.insideUnitCircle * 5f).normalized * npcMoveSpeed;
-            transform.Translate(npcNewPosition);
-            npcIsMoving = true;
-        }
-
-
-
-        if (destinationReached)
-        {
-            npcIsMoving = false;
-        }
-       
+        transform.Translate(npcNewPosition);
     }
 }
