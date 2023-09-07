@@ -362,15 +362,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d14343fd1c2a63459088bb1903a6af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcNewPosition: {x: 0, y: 0}
-  directionOfWander: {x: 0, y: 0}
-  randomlyGeneratedPosition: {x: 0, y: 0}
-  npcIsMoving: 0
-  destinationReached: 1
-  hitWall: 0
-  npcMoveSpeed: 1
-  runningTimer: 0
-  npcMoveTimer: 3
+  startingPosition: {x: 0, y: 0}
+  targetPosition: {x: 0, y: 0}
+  vectorToTargetPosition: {x: 0, y: 0}
+  npcMag: 0
+  targetMagnitude: 0
+  hasPatrolTarget: 0
 --- !u!60 &758893534
 PolygonCollider2D:
   m_ObjectHideFlags: 0
