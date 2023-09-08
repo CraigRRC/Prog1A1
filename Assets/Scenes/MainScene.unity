@@ -368,6 +368,7 @@ MonoBehaviour:
   npcMag: 0
   targetMagnitude: 0
   hasPatrolTarget: 0
+  moveSpeed: 1
 --- !u!60 &758893534
 PolygonCollider2D:
   m_ObjectHideFlags: 0
