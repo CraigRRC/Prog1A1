@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class WanderBehaviour : MonoBehaviour
 {
+    PlayerRangeDetection playerRangeDetector;
+
     public Vector2 startingPosition;
     public Vector2 targetPosition;
     public Vector2 vectorToTargetPosition;
@@ -17,7 +19,6 @@ public class WanderBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         
     }
 
