@@ -12,6 +12,7 @@ public class WanderBehaviour : MonoBehaviour
     public float npcMag;
     public float targetMagnitude;
     public bool hasPatrolTarget = false;
+    public float moveSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,27 +26,24 @@ public class WanderBehaviour : MonoBehaviour
     {
         if(!hasPatrolTarget)
         {
+            //Find a new target with a radius of 5f around the NPC.
             targetPosition = Random.insideUnitCircle * 5f;
             hasPatrolTarget = true;
         }
         else
         {
-            npcMag = startingPosition.magnitude;
+            //Make a new vector which holds the distance between our target vector, and the vector of our NPC's location.
             vectorToTargetPosition = targetPosition - (Vector2)transform.position;
+            //Translate the direction of that newly acquired vector, and multiply it by our movespeed to get it's new magnitude as frame independant.
+            transform.Translate(vectorToTargetPosition.normalized * moveSpeed * Time.deltaTime);
+            Debug.DrawRay(transform.position, vectorToTargetPosition);
+            //Cache the magnitude of this vector (this vector is the distance and direction from my NPC to their target location.)
             targetMagnitude = vectorToTargetPosition.magnitude;
-
-            Debug.DrawRay(transform.position, targetPosition);
-
-            if (targetMagnitude >= 0.1f)
+            //Once the NPC has come close enough to it's target, we look for a new target.
+            if(targetMagnitude < 0.1f)
             {
-                transform.Translate(targetPosition.normalized * Time.deltaTime);
-                
+                hasPatrolTarget = false;
             }
         }
-        
-
-      
-        
-       
     }
 }
