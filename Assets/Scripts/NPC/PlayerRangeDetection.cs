@@ -10,7 +10,7 @@ public class PlayerRangeDetection : MonoBehaviour
     Vector2 playerPosition;
     Vector2 npcPosition;
     Vector2 vectorThatIWant;
-    float moveSpeed = 3f;
+    float moveSpeed = 6f;
     bool chasePlayer;
 
     // Start is called before the first frame update
@@ -32,9 +32,9 @@ public class PlayerRangeDetection : MonoBehaviour
             transform.Translate(vectorThatIWant.normalized * moveSpeed * Time.deltaTime);
        }
 
-       if(vectorThatIWant.magnitude < 2f)
+       if(vectorThatIWant.magnitude < 5f)
        {
-           Debug.Log("Player is within 2f");
+           Debug.Log("Player is within 5f");
             chasePlayer = true;
        }
         else
