@@ -64,7 +64,7 @@ public class WanderBehaviour : MonoBehaviour
     //Check to see if we are currently chasing the player.
     private bool NotChasingPlayer()
     {
-        return !playerRangeDetector.GetChasePlayer();
+        return !playerRangeDetector.GetIsChasing();
     }
 
     //True if the distance between us and the target is less than 0.1f
