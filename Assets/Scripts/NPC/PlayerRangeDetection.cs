@@ -14,17 +14,11 @@ public class PlayerRangeDetection : MonoBehaviour
 
     Vector2 playerPosition;
     Vector2 npcPosition;
-    Vector2 vectorBetweenCharacterAndNPC;
-    public float chaseRadius = 5f;
+    private Vector2 vectorBetweenCharacterAndNPC;
+    public float chaseRadius = 10f;
     public float chaseSpeed = 3f;
     public bool chasePlayer;
     public float angle;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -72,4 +66,7 @@ public class PlayerRangeDetection : MonoBehaviour
            transform.rotation = Quaternion.Euler(0, 0, 0);
        }
     }
+
+    public float GetDistanceToPlayer() { return vectorBetweenCharacterAndNPC.magnitude; }
+    public Vector2 GetDirectionToPlayer() { return vectorBetweenCharacterAndNPC.normalized; }
 }
