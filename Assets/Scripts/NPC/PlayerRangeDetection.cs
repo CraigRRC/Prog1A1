@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 public class PlayerRangeDetection : MonoBehaviour
 {
     public GameObject player;
-    public WanderBehaviour npc;
 
     public float rotateSpeed = 10f;
     public float currentRotation = 0f;
@@ -55,7 +54,6 @@ public class PlayerRangeDetection : MonoBehaviour
        else
        {
            chasePlayer = false;
-           //transform.rotation = Quaternion.Euler(0, 0, 0);
            spriteRenderer.color = Color.blue;
        }
     }
