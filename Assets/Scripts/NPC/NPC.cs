@@ -11,7 +11,7 @@ public class NPC : MonoBehaviour
     void Start()
     {
         npcSpriteRenderer = GetComponent<SpriteRenderer>();
-        npcSpriteRenderer.color = Color.red;
+        npcSpriteRenderer.color = Color.blue;
     }
 
     // Update is called once per frame

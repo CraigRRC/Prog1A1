@@ -8,6 +8,7 @@ public class PlayerRangeDetection : MonoBehaviour
 {
     public GameObject player;
     public WanderBehaviour npc;
+    private SpriteRenderer spriteRenderer;
 
     public float rotateSpeed = 50f;
     public float currentRotation = 0f;
@@ -20,6 +21,11 @@ public class PlayerRangeDetection : MonoBehaviour
     public bool chasePlayer;
     public float angle;
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +36,7 @@ public class PlayerRangeDetection : MonoBehaviour
         
        if (chasePlayer)
        {
-            //gets me the correct rotation, but I seem to be moving in world space opposed to local?
+            spriteRenderer.color = Color.yellow;
 
             angle = Vector2.SignedAngle(Vector2.up, vectorBetweenCharacterAndNPC);
 
@@ -64,6 +70,7 @@ public class PlayerRangeDetection : MonoBehaviour
        {
            chasePlayer = false;
            transform.rotation = Quaternion.Euler(0, 0, 0);
+           spriteRenderer.color = Color.blue;
        }
     }
 

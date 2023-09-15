@@ -484,8 +484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2668247845336385359, guid: ea41e8a26b0038e4992f0bf8129680ba, type: 3}
   blaster: {fileID: 1851209648}
-  effectiveRange: 5
+  effectiveRange: 6
   timer: 0
+  lockOnDuration: 2
   targetAcquired: 0
 --- !u!1 &932697196
 GameObject:
