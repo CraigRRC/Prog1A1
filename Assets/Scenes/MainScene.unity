@@ -464,11 +464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 967513232}
   npc: {fileID: 758893533}
-  rotateSpeed: 50
+  rotateSpeed: 150
   currentRotation: 0
-  chaseRadius: 10
-  chaseSpeed: 3
-  chasePlayer: 0
   angle: 0
 --- !u!114 &758893537
 MonoBehaviour:

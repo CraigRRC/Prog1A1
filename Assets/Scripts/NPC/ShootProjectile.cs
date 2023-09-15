@@ -22,7 +22,7 @@ public class ShootProjectile : MonoBehaviour
 
     public void Update()
     {
-        if (rangeFinder.chasePlayer && rangeFinder.GetDistanceToPlayer() <= effectiveRange)
+        if (rangeFinder.GetChasePlayer() && rangeFinder.GetDistanceToPlayer() <= effectiveRange)
         {
             spriteRenderer.color = Color.red;
             timer += Time.deltaTime;

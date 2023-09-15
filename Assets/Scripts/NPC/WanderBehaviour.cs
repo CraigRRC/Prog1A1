@@ -26,10 +26,9 @@ public class WanderBehaviour : MonoBehaviour
         originPosition = (Vector2)transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!playerRangeDetector.chasePlayer)
+        if (!playerRangeDetector.GetChasePlayer())
         {
             if (!hasPatrolTarget)
             {
@@ -41,6 +40,10 @@ public class WanderBehaviour : MonoBehaviour
             {
                 if (returnToOrigin)
                 {
+                    //Rotate
+                    Quaternion targetRotation = Quaternion.Euler(0f, 0f, 0f);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 50f * Time.deltaTime);
+
                     //get location where we are currently
                     lastKnownLocation = (Vector2)transform.position;
                     //get the direction and distance to our origin
