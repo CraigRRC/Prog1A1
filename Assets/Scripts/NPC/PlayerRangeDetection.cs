@@ -9,11 +9,11 @@ public class PlayerRangeDetection : MonoBehaviour
     public GameObject player;
     public float rotateSpeed = 10f;
     public float chaseRadius = 10f;
+    public float chaseSpeed = 3f;
+    public float stoppingDistance = 1.5f;
 
     private SpriteRenderer spriteRenderer;
     private Vector2 vectorBetweenPlayerAndNPC;
-    private float chaseSpeed = 3f;
-    private float stoppingDistance = 1.5f;
     private bool isChasing;
 
     private void Awake()

@@ -6,13 +6,17 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float firePower = 50f;
-    public float destroyTimer = 0f;
+    public float projectileLifespan = 5f;
+    private float timer = 0f;
     private void Update()
     {
+        //Fire the projectile at the speed of firePower.
         transform.Translate(Vector3.up * firePower * Time.deltaTime);
-        destroyTimer += Time.deltaTime;
-        if ( destroyTimer > 5f)
+        timer += Time.deltaTime;
+        //Destroys the projectile after the timer has reached it's threshold.
+        if (timer > projectileLifespan)
         {
+            
             Destroy(gameObject);
         }
     }
