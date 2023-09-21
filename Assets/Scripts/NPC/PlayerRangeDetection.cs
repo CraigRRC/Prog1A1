@@ -55,7 +55,6 @@ public class PlayerRangeDetection : MonoBehaviour
        else
        {
            chasePlayer = false;
-           //transform.rotation = Quaternion.Euler(0, 0, 0);
            spriteRenderer.color = Color.blue;
        }
     }
@@ -65,8 +64,6 @@ public class PlayerRangeDetection : MonoBehaviour
         angle = Vector2.SignedAngle(Vector2.up, vectorBetweenCharacterAndNPC);
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
-
-
     }
 
     public float GetDistanceToPlayer() { return vectorBetweenCharacterAndNPC.magnitude; }

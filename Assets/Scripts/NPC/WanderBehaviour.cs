@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class WanderBehaviour : MonoBehaviour
 {
-    PlayerRangeDetection playerRangeDetector;
+    private PlayerRangeDetection playerRangeDetector;
 
     public Vector2 originPosition;
     public Vector2 lastKnownLocation;
